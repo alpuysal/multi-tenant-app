@@ -4,6 +4,10 @@ export default defineNuxtRouteMiddleware((to, from) => {
   const domain = useRequestHeaders()["host"];
   const tenant = getTenantByDomain(domain);
 
+  const { hostname } = useRequestURL();
+
+  console.log(hostname);
+
   console.log(domain);
   console.log(tenant);
 
