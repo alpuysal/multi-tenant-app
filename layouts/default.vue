@@ -7,6 +7,8 @@
 <script setup>
 const tenant = useTenant().value;
 const tenantTheme = tenant ? tenant.theme : 'default-theme';
+
+console.log(tenant);
 </script>
 
 <style>
