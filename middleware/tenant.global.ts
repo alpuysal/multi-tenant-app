@@ -4,6 +4,9 @@ export default defineNuxtRouteMiddleware((to, from) => {
   const domain = useRequestHeaders()["host"];
   const tenant = getTenantByDomain(domain);
 
+  console.log(domain);
+  console.log(tenant);
+
   if (!tenant) {
     return abortNavigation("Tenant not found");
   }
