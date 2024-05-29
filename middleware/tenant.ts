@@ -14,8 +14,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
 function getTenantByDomain(domain: string) {
   const tenants: any = {
-    "kreon.humon.jobs": { name: "Kreon", theme: "themeKreon" },
-    "beezsoft.humon.jobs": { name: "Beezsoft", theme: "themeBeezsoft" },
+    "kreon.healsynchub.com": { name: "Kreon", theme: "themeKreon" },
+    "beezsoft.healsynchub.com": { name: "Beezsoft", theme: "themeBeezsoft" },
   };
 
   return tenants[domain] || null;
