@@ -1,14 +1,12 @@
 import { useTenant } from "~/composables/useTenant";
 
 export default defineNuxtRouteMiddleware((to, from) => {
-  const domain = useRequestHeaders()["host"];
-  const tenant = getTenantByDomain(domain);
-
   const { hostname } = useRequestURL();
+
+  const tenant = getTenantByDomain(hostname);
 
   console.log(hostname);
 
-  console.log(domain);
   console.log(tenant);
 
   if (!tenant) {
@@ -21,8 +19,8 @@ export default defineNuxtRouteMiddleware((to, from) => {
 
 function getTenantByDomain(domain: string) {
   const tenants: any = {
-    "kreon.healsynchub.com": { name: "Kreon", theme: "themeKreon" },
-    "beezsoft.healsynchub.com": { name: "Beezsoft", theme: "themeBeezsoft" },
+    "kreon.humon.jobs": { name: "Kreon", theme: "themeKreon" },
+    "beezsoft.humon.jobs": { name: "Beezsoft", theme: "themeBeezsoft" },
   };
 
   return tenants[domain] || null;
